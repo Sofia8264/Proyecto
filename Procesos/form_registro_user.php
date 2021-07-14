@@ -1,6 +1,6 @@
 <?php
 // print_r($_POST);exit;
-require_once "../includes/class_user.php";
+require_once "../Includes.php/class_user.php";
 $user_sistema = new Usuario();
 $respuesta = $user_sistema->guardar_usuario(
     $_POST['nombre_user'], 

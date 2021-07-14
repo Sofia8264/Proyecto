@@ -13,7 +13,7 @@ class Usuario extends Conexion
     function __construct()
     {
         $this->conexion = new Conexion();
-        $this->conexion = $this->conexion->conexion_bd_notas();
+        $this->conexion = $this->conexion->conexion_tb_usuario();
     }
 
     function guardar_usuario($nombre_form, $apellido_form, $correo_form, $pass_form)
@@ -35,25 +35,20 @@ class Usuario extends Conexion
         return "Registro exitoso";
     }
 
+    
     function listar_usuarios()
     {
-        $perro_consulta = "SELECT * FROM tb_usuario";
-        $consulta = $this->conexion->query($perro_consulta);
+        $foca_consulta = "SELECT * FROM tb_usuario";
+        $consulta = $this->conexion->query($foca_consulta);
         $resultado  = $consulta->fetchall(PDO::FETCH_ASSOC);
         return $resultado;
     }
 
-    /**
-     * FETCH_ASSOC //devuelve la info como un array asociativo
-     * FETCH_NUM //devuelve la info como un array numerico
-     * FETCH_OBJ  //devuelve la info como un objeto
-     * FETCH_BOTH // devuelve la info con ambos formatos
-     */
 
     function listar_usuario_x_id($id_usuario_bonito)
     {
-        $gato_consulta = "SELECT * FROM tb_usuario WHERE id_usuario = ?";
-        $consulta = $this->conexion->prepare($gato_consulta);
+        $foca_consulta = "SELECT * FROM tb_usuario WHERE id_usuario = ?";
+        $consulta = $this->conexion->prepare($foca_consulta);
         $data_user = array($id_usuario_bonito);
         $consulta->execute($data_user);
         $resultado  = $consulta->fetch(PDO::FETCH_ASSOC);
@@ -77,11 +72,11 @@ class Usuario extends Conexion
         return $respuesta;
     }
 
-    function eliminar_usuario($id)
+    function eliminar_usuario($id, $nombre, $apellido, $correo)
     {
-        $query_delete = "DELETE FROM tb_usuario WHERE id_usuario = ?";
+        $query_delete = "DELETE * FROM tb_usuario WHERE id_usuario = ?";
         $delete = $this->conexion->prepare($query_delete);
-        $array_delete = array($id);
+        $array_delete = array($id, $nombre, $apellido, $correo);
         $delete->execute($array_delete);
         return "
         <script>
@@ -93,4 +88,5 @@ class Usuario extends Conexion
         </script>
         ";
     }
+    
 }

@@ -1,5 +1,5 @@
 <?php
-require_once "../includes/class_user.php";
+require_once "../Includes.php/class_user.php";
 $usuario = new Usuario();
 $update_user = $usuario->actualiza_usuario(
     $_POST['id_user'],
