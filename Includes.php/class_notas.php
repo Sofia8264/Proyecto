@@ -70,16 +70,16 @@ class Notas extends Conexion
             return $respuesta;
         }
 
-    function eliminar_materia($id)
+    function eliminar_notas($id, $nota)
         {
-            $query_delete = "DELETE FROM tb_materias WHERE id_materia = ?";
+            $query_delete = "DELETE FROM tb_notas WHERE id_nota = ?";
             $delete = $this->conexion->prepare($query_delete);
             $array_delete = array($id);
             $delete->execute($array_delete);
             return "
             <script>
             Swal.fire(               
-                'Usuario Eliminado!',
+                'Nota Eliminada!',
                 'El usuario quedo sin registro en su BD.',
                 'success'
             )

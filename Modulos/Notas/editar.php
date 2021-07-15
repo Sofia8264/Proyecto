@@ -1,16 +1,24 @@
+<?php
+require_once "../../Includes.php/class_materia.php";
+$materia = new Materia();
+
+$data_user = $materia->listar_materia_x_id($_GET['idMateria']);
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio Estudiantes</title>
-    <link href="../../bootstrap-4.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href="../../CSS/Estilos.css" rel="stylesheet" type="text/css">
 </head>
-<body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="../../Homep.php">
         <img src="../../Img/Logo.png" alt="LogoEmpresa" width="70" height="auto">
     </a>
@@ -37,238 +45,30 @@
           </ul>
         </div>
       </nav>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-sm-9 col-xl-9">
-                    <div class="card">
-                        <div class="card-header d-flex justify-content-between align-items-center bg-dark">
-                            Editar notas
-                        </div>
-                        <div class="card-body">
-                            <table class="table table-striped table-dark">
-        <table class="table table-striped table-dark">
-            <thead>
-              <tr>
-                <th scope="col">Estudiante</th>
-                <th scope="col">Materia</th>
-                <th scope="col">Nota 1</th>
-                <th scope="col">Nota 2</th>
-                <th scope="col">Nota 3</th>
-                <th scope="col">Observaciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row"><input type="text" class="form-control" id="formGroupExampleInput"></th>
-                <td><input type="text" class="form-control" id="formGroupExampleInput"></td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">  
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <textarea id="mensaje" name="mensaje" placeholder="Escribe tu comentario"></textarea>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"><input type="text" class="form-control" id="formGroupExampleInput"></th>
-                <td><input type="text" class="form-control" id="formGroupExampleInput"></td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">  
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <textarea id="mensaje" name="mensaje" placeholder="Escribe tu comentario"></textarea>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"><input type="text" class="form-control" id="formGroupExampleInput"></th>
-                <td><input type="text" class="form-control" id="formGroupExampleInput"></td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">  
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <textarea id="mensaje" name="mensaje" placeholder="Escribe tu comentario"></textarea>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"><input type="text" class="form-control" id="formGroupExampleInput"></th>
-                <td><input type="text" class="form-control" id="formGroupExampleInput"></td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">  
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <textarea id="mensaje" name="mensaje" placeholder="Escribe tu comentario"></textarea>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"><input type="text" class="form-control" id="formGroupExampleInput"></th>
-                <td><input type="text" class="form-control" id="formGroupExampleInput"></td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">  
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <textarea id="mensaje" name="mensaje" placeholder="Escribe tu comentario"></textarea>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"><input type="text" class="form-control" id="formGroupExampleInput"></th>
-                <td><input type="text" class="form-control" id="formGroupExampleInput"></td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">  
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <textarea id="mensaje" name="mensaje" placeholder="Escribe tu comentario"></textarea>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"><input type="text" class="form-control" id="formGroupExampleInput"></th>
-                <td><input type="text" class="form-control" id="formGroupExampleInput"></td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">  
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <textarea id="mensaje" name="mensaje" placeholder="Escribe tu comentario"></textarea>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"><input type="text" class="form-control" id="formGroupExampleInput"></th>
-                <td><input type="text" class="form-control" id="formGroupExampleInput"></td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">  
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <textarea id="mensaje" name="mensaje" placeholder="Escribe tu comentario"></textarea>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"><input type="text" class="form-control" id="formGroupExampleInput"></th>
-                <td><input type="text" class="form-control" id="formGroupExampleInput"></td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">  
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <textarea id="mensaje" name="mensaje" placeholder="Escribe tu comentario"></textarea>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"><input type="text" class="form-control" id="formGroupExampleInput"></th>
-                <td><input type="text" class="form-control" id="formGroupExampleInput"></td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">  
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <textarea id="mensaje" name="mensaje" placeholder="Escribe tu comentario"></textarea>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"><input type="text" class="form-control" id="formGroupExampleInput"></th>
-                <td><input type="text" class="form-control" id="formGroupExampleInput"></td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">  
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <textarea id="mensaje" name="mensaje" placeholder="Escribe tu comentario"></textarea>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"><input type="text" class="form-control" id="formGroupExampleInput"></th>
-                <td><input type="text" class="form-control" id="formGroupExampleInput"></td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">  
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </td>
-                <td>
-                    <textarea id="mensaje" name="mensaje" placeholder="Escribe tu comentario"></textarea>
-                </td>
-                
-                
-              </tr>
-
-              
-              
-            </tbody>
-          </table>
-
-          <input type="button" value="Guardar notas" class="btn btn-info">
-       
 
 
+    <div class="container">
+        <form method="POST" action="../../Procesos/form_update_nota.php">
+            <div class="form-group">
+                <label for="nombre_user">Notas</label>
+                <input type="text" class="form-control" id="id_estudiante" name="nombre_user" value="<?php echo $data_user['estudiante'] ?>">
+            </div>
+            <div class="form-group">
+                <label for="nombre_user">Estudiantes</label>
+                <input type="text" class="form-control" id="id_nota" name="nombre_user" value="<?php echo $data_user['nota'] ?>">
+            </div>
+            <div class="form-group">
+                <label for="nombre_user">Materias</label>
+                <input type="text" class="form-control" id="id_materia" name="nombre_user" value="<?php echo $data_user['nombre_materia'] ?>">
+            </div>
+            <input type="hidden" name="id_nota" value="<?php echo $_GET['idNota'] ?>">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+        </form>
+    </div>
 
-
-
-
-
-
-    <script src="../../Js/jquery.min.3.6.js"></script>
-    <script src="../../bootstrap-4.6/js/bootstrap.bundle.min.js"></script>  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="../../bootstrap-4.6/js/bootstrap.min.js"></script>
 </body>
+
 </html>

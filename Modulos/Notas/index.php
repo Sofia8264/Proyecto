@@ -77,26 +77,6 @@
             </tbody>
         </table>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        function confirmar_borrar_usuario(id_usuario) {
-            Swal.fire({
-                title: 'Seguro desea eliminar el dato?',
-                text: "Esta accion no se puede devolver...",
-                icon: 'question',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Eliminar',
-                allowEscapeKey: true
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    location.href ="http://localhost:8080/erp_notas_ispa/eliminar_usuario.php?idUser="+id_usuario;
-                }
-            })
-        }
-    </script>
-
 <script src="../../Js/jquery.min.3.6.js"></script>
       <script src="../../bootstrap-4.6/js/bootstrap.bundle.min.js"></script>
   </body>

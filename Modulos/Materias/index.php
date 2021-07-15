@@ -65,7 +65,7 @@
                             <a href="editar_materias.php?idMateria=<?php echo $lista[$x]['id_materia'] ?>">
                                 <button class="btn btn-warning">Editar</button>
                             </a>
-                            <button onclick="confirmar_borrar_materia(<?php echo $lista[$x]['id_materia'] ?>)" class="btn btn-danger">Eliminar</button>
+                            <button onclick="eliminar_materia(<?php echo $lista[$x]['id_materia'] ?>)" class="btn btn-danger">Eliminar</button>
                         </td>
                     </tr>
 
@@ -74,13 +74,13 @@
 
                 ?>
 
-
-            </tbody>
-        </table>
+</table>
+        <a href="crear.php" class="btn btn-primary" style='width:700px;'>Crear</a>
+        </tbody>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        function confirmar_borrar_usuario(id_usuario) {
+        function eliminar_materia(id_materia) {
             Swal.fire({
                 title: 'Seguro desea eliminar el dato?',
                 text: "Esta accion no se puede devolver...",
@@ -92,7 +92,7 @@
                 allowEscapeKey: true
             }).then((result) => {
                 if (result.isConfirmed) {
-                    location.href ="http://localhost:8080/erp_notas_ispa/eliminar_usuario.php?idUser="+id_usuario;
+                    location.href ="http://localhost:/Proyecto/Eliminar/eliminar_materia.php?idMateria="+id_materia;
                 }
             })
         }

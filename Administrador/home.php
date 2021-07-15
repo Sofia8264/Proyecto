@@ -45,32 +45,6 @@
     <a href="../Modulos/Notas/index.php" class="btn btn-primary" style='width:300px; height:150px'>Notas</a><br></br>
     <a href="../Modulos/Roles/index.php" class="btn btn-primary" style='width:300px; height:150px'>Roles</a><br></br>  </div>
     </div>
-    <script>
-        
-<?php
-
-session_start();
-if(!isset($_SESSION['id'])){
-    header("location:login.php");
-    die();
-}
-echo $_SESSION['id'] .'</br>';
-echo $_SESSION['id_rol'];
-
-if($_SESSION['id_rol'] == '4' || $_SESSION['id_rol'] == '3'){
-    //instrucciones
-};
-?>
-<br>
-<br>
-<br>
-Pagina solo accedida si hay un usuario logueado
-
-:D
-<br>
-<a href="logout.php">Cerrar sesion</a>
-</script>
-
 
       <script src="../Js/jquery.min.3.6.js"></script>
       <script src="../bootstrap-4.6/js/bootstrap.bundle.min.js"></script>

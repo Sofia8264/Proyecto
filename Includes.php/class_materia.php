@@ -3,7 +3,9 @@
 require_once "class_conexion.php";
 class Materia extends Conexion
     {
-        private $nombre;
+        private $nota;
+        private $estudiante;
+        private $nombre_materia;
         private $conexion;
     
         function __construct()
@@ -56,7 +58,7 @@ class Materia extends Conexion
             return $respuesta;
         }
 
-    function eliminar_materia($id)
+        function eliminar_materia($id)
         {
             $query_delete = "DELETE FROM tb_materias WHERE id_materia = ?";
             $delete = $this->conexion->prepare($query_delete);
@@ -64,12 +66,18 @@ class Materia extends Conexion
             $delete->execute($array_delete);
             return "
             <script>
-            Swal.fire(               
-                'Usuario Eliminado!',
+            Swal.fire(
+                'Materia Eliminada! :)',
                 'El usuario quedo sin registro en su BD.',
                 'success'
             )
+        
+            setTimeout('redireccion()', 2000);
+        
+            function redireccion(){
+                window.location = 'https://localhost/Proyecto/Modulos/Materias/index.php';
+            }
             </script>
             ";
         }
-    }
+        }

@@ -78,11 +78,11 @@
                 <?php
                 }
 
-                ?>
+                ?>     
 
-
-            </tbody>
         </table>
+        <a href="crear.php" class="btn btn-primary btn-block">Crear un usuario nuevo</a>
+        </tbody>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
@@ -98,7 +98,7 @@
                 allowEscapeKey: true
             }).then((result) => {
                 if (result.isConfirmed) {
-                    location.href ="http://localhost:8080/erp_notas_ispa/eliminar_usuario.php?idUser="+id_usuario;
+                    location.href ="http://localhost:/Proyecto/Eliminar/eliminar_usuario.php?idUser="+id_usuario;
                 }
             })
         }

@@ -72,21 +72,26 @@ class Usuario extends Conexion
         return $respuesta;
     }
 
-    function eliminar_usuario($id, $nombre, $apellido, $correo)
-    {
-        $query_delete = "DELETE * FROM tb_usuario WHERE id_usuario = ?";
-        $delete = $this->conexion->prepare($query_delete);
-        $array_delete = array($id, $nombre, $apellido, $correo);
-        $delete->execute($array_delete);
-        return "
-        <script>
-        Swal.fire(               
-            'Usuario Eliminado!',
-            'El usuario quedo sin registro en su BD.',
-            'success'
-        )
-        </script>
-        ";
+function eliminar_usuario($id)
+{
+    $query_delete = "DELETE FROM tb_usuario WHERE id_usuario = ?";
+    $delete = $this->conexion->prepare($query_delete);
+    $array_delete = array($id);
+    $delete->execute($array_delete);
+    return "
+    <script>
+    Swal.fire(
+        'Usuario Eliminado!',
+        'El usuario quedo sin registro en su BD.',
+        'success'
+    )
+
+    setTimeout('redireccion()', 2000);
+
+    function redireccion(){
+        window.location = 'https://localhost/Proyecto/Modulos/Estudiantes/index.php';
     }
-    
+    </script>
+    ";
+}
 }
